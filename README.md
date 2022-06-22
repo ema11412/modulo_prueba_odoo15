@@ -9,7 +9,7 @@ _En este repositorio se encuentran el módulo especificado en el documento._
 
 _Se coloca el módulo en la carpeta dedicada para addons de Odoo_
 
-Configurara el archivo `odoo.conf` para agregar el path de custom addons.
+Configurar el archivo `odoo.conf` para agregar el path de custom addons.
 
 
 ## Autores ✒️

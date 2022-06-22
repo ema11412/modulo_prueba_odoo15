@@ -1,0 +1,43 @@
+<odoo>
+  <data>
+
+    <!-- Campos vistos para la parte del informe de ventas -->
+
+    <record model="ir.ui.view" id="sale_view_order_form">
+      <field name="name">sale.order.inherited</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <field name="payment_term_id" position="after">
+          
+          <field name="contrato_externo" />
+          <field name="fecha_de_contrato" />
+
+        </field>
+      </field>
+    </record>
+    
+
+
+    <template id="my_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+
+      <!-- Campos vistos para la parte del reporte del informe -->
+
+      <xpath expr="//div[@class='page']" position="after">
+        <div class="page">
+          <div t-if = "doc.contrato_externo">
+            <strong> Contrato Externo: </strong>
+            <span t-field = "doc.contrato_externo"/>
+          </div>
+          <div t-if = "doc.fecha_de_contrato">
+            <strong> Fecha de Contrato: </strong>
+            <span t-field = "doc.fecha_de_contrato"/>
+          </div>
+        </div>
+      </xpath>
+   
+    </template>
+
+
+  </data>
+</odoo>
